@@ -230,6 +230,7 @@ A complete overview of share options follows below. Only `name` is required, the
 | `owner`                | `root`                          | Set the owner of the path                                                                      |
 | `path`                 | `/{{samba_shares_root}}/{{name}}` | The path to the share directory.                                                               |
 | `public`               | `false`                            | Controls read access for guest users                                                           |
+| `read_list`            | -                               | Controls read access for registered users. Use the syntax of the corresponding Samba setting. |
 | `read_only`               | -                            | If this parameter is yes, then users of a service may not create or modify files in the service's directory.                        |
 | `setype`               | -                 | The SELinux type of the share directory                                                        |
 | `user`                 | -                               | The user files in the share will be added to. (force user)                                     |
@@ -239,7 +240,7 @@ A complete overview of share options follows below. Only `name` is required, the
 | `writeable`             | -                               | Writeable for guests.                                                                           |
 | `write_list`           | -                               | Controls write access for registered users. Use the syntax of the corresponding Samba setting. |
 
-The values for `valid_users` and `write_list` should be a comma separated list of users. Names prepended with `+` or `@` are interpreted as groups. The documentation for the [Samba configuration](https://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html) has more details on these options.
+The values for `valid_users`, `read list` and `write_list` should be a comma separated list of users. Names prepended with `+` or `@` are interpreted as groups. The documentation for the [Samba configuration](https://www.samba.org/samba/docs/man/manpages-3/smb.conf.5.html) has more details on these options.
 
 ## Username mapping
 
